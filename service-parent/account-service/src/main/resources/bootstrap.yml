@@ -1,0 +1,8 @@
+spring:
+   application:
+      name: account-service
+   cloud:
+      config:
+         profile: native
+         url: http://localhost:8888
+            
