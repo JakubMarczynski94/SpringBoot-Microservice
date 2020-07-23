@@ -1,6 +1,7 @@
 package org.account.service.service;
 
 
+import java.util.Date;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 
@@ -16,7 +17,7 @@ import org.springframework.util.Assert;
 
 @RequiredArgsConstructor
 @Service
-public class AccountServiceLayer {
+public class AccountService {
 
     private final AccountRepository accountRepository;
     private final ModelMapper modelMapper;
@@ -30,7 +31,10 @@ public class AccountServiceLayer {
 
     @Transactional
     public AccountDto save(AccountDto accountDto) {
+    	accountDto.setStatus(1);
+    	
         Account account = modelMapper.map(accountDto, Account.class);
+        account.setCreatedAt(new Date());
         account = accountRepository.save(account);
         accountDto.setId(account.getId());
         return accountDto;
@@ -38,15 +42,20 @@ public class AccountServiceLayer {
 
     @Transactional
     public AccountDto update(Long id, AccountDto accountDto) {
-        Assert.isNull(id, "Id cannot be null");
-        Optional<Account> account = accountRepository.findById(id);
-        Account accountToUpdate = account.map(it -> {
-            it.setBirthDate(accountDto.getBirthDate());
-            it.setName(accountDto.getName());
-            it.setSurname(accountDto.getSurname());
-            return it;
-        }).orElseThrow(IllegalArgumentException::new);
-        return modelMapper.map(accountRepository.save(accountToUpdate), AccountDto.class);
+        Optional<Account> optAccount = accountRepository.findById(id);
+        if(optAccount.isPresent()) {
+            Account accountToUpdate = optAccount.map(it -> {
+                it.setBirthDate(accountDto.getBirthDate());
+                it.setName(accountDto.getName());
+                it.setSurname(accountDto.getSurname());
+                it.setEmail(accountDto.getEmail());
+                return it;
+            }).orElseThrow(IllegalArgumentException::new);
+            return modelMapper.map(accountRepository.save(accountToUpdate), AccountDto.class);
+        	
+        }else {
+        	throw new IllegalArgumentException("There is no such a account with "+id);
+        }
     }
 
     @Transactional

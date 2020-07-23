@@ -1,4 +1,4 @@
-package org.account.service;
+package org.ticket.service;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AccountServiceTest 
+public class TicketServiceAppTest 
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class AccountServiceTest
      *
      * @param testName name of the test case
      */
-    public AccountServiceTest( String testName )
+    public TicketServiceAppTest( String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class AccountServiceTest
      */
     public static Test suite()
     {
-        return new TestSuite( AccountServiceTest.class );
+        return new TestSuite( TicketServiceAppTest.class );
     }
 
     /**

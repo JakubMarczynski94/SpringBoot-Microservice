@@ -1,4 +1,4 @@
-package org.account.service;
+package org.ticket.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
