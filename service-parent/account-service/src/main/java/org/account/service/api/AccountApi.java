@@ -3,7 +3,7 @@ package org.account.service.api;
 
 
 import org.account.service.dto.AccountDto;
-import org.account.service.service.AccountServiceLayer;
+import org.account.service.service.AccountService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AccountApi {
 
-    private final AccountServiceLayer accountService;
+    private final AccountService accountService;
 
     @GetMapping("/{id}")
     public ResponseEntity<AccountDto> get(@PathVariable("id") Long id) {
