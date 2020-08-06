@@ -1,16 +1,15 @@
 package org.ticket.service.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.ticket.service.repository.TicketRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.ticket.service.dto.TicketDto;
 
-import lombok.RequiredArgsConstructor;
+public interface TicketService {
+    TicketDto save(TicketDto ticketDto);
 
-@Service
-@RequiredArgsConstructor
-public class TicketService {
+    TicketDto update(Long id, TicketDto ticketDto);
 
-	
-	
-	
+    TicketDto getById(Long ticketId);
+
+    Page<TicketDto> getPagination(Pageable pageable);
 }
