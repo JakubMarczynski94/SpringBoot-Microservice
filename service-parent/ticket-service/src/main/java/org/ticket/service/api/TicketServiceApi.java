@@ -21,12 +21,17 @@ public class TicketServiceApi {
     private final ModelMapper modelMapper;
     private final TicketService ticketService;
     
+    @GetMapping("/hello/{id}")
+    public String hello(@PathVariable("id") Long id) {
+    	return "hello world : "+id;
+    }
+    
     @GetMapping("/{id}")
     public ResponseEntity<TicketDto> get(@PathVariable("id") Long id) {
         return ResponseEntity.ok(ticketService.getById(id));
     }
     @PostMapping
-    public ResponseEntity<TicketDto> post(TicketDto ticketDto) {
+    public ResponseEntity<TicketDto> post(@RequestBody TicketDto ticketDto) {
         return ResponseEntity.ok(ticketService.save(ticketDto));
     }
     @PutMapping("/{id}")

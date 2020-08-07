@@ -8,8 +8,11 @@ import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedDate;
 
+import lombok.Data;
+
 
 @MappedSuperclass
+@Data
 public abstract class BaseEntityModel implements Serializable{
 	
 	@CreatedDate
