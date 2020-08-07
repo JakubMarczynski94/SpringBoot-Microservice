@@ -34,10 +34,10 @@ import lombok.NoArgsConstructor;
 public class Ticket extends BaseEntityModel {
 
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator( name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column( name = "ticket_id", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(generator = "UUID")
+	//@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column( name = "ticket_id")
 	private Long ticketid;
 
     @Column(name  = "description", length = 600)
@@ -46,6 +46,9 @@ public class Ticket extends BaseEntityModel {
     @Column(name  = "note",length = 600)
     private String note;
 
+    @Column(name  = "assignee",length = 600)
+    private String assignee;
+    
     @Column(name  = "ticketDate")
     private Date ticketDate;
     

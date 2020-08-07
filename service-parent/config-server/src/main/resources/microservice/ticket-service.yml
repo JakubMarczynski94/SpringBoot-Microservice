@@ -9,7 +9,7 @@ spring:
    application:
       name: ticket-service
    datasource:
-      url: ${MYSQL_URL:jdbc:mysql://localhost:3306/microserviceapp}
+      url: jdbc:mysql://localhost:3306/microserviceapp
       username: root
       password: root
    jpa:
