@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.example</groupId>
-		<artifactId>microservice-app</artifactId> 
-    <relativePath/>
-	<version>10.0.1</version>
+		<artifactId>microservice-app</artifactId>
+		<relativePath/>
+		<version>10.0.1</version>
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>service-parent</artifactId>
@@ -18,22 +18,24 @@
 
 	<packaging>pom</packaging>
 	<modules>
-	<module>account-service</module>
-    <module>ticket-service</module>
-    <module>config-server</module>
-    <module>eureka-server</module>
+		<module>account-service</module>
+<!-- 		<module>ticket-service</module> -->
+		<module>config-server</module>
+		<module>eureka-server</module>
+    <module>ticket.service-app</module>
+    <module>common-service-app</module>
   </modules>
 	<dependencies>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.cloud</groupId> -->
-<!-- 			<artifactId>spring-cloud-starter-config</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.cloud</groupId> -->
-<!-- 			<artifactId>spring-cloud-starter-eureka</artifactId> -->
-<!-- 			<version>1.4.7.RELEASE</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.cloud</groupId> -->
+		<!-- <artifactId>spring-cloud-starter-config</artifactId> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.cloud</groupId> -->
+		<!-- <artifactId>spring-cloud-starter-eureka</artifactId> -->
+		<!-- <version>1.4.7.RELEASE</version> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -57,7 +59,7 @@
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

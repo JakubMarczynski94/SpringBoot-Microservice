@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.example</groupId>
-		<artifactId>service-parent</artifactId>
-		<version>10.0.1</version>
-	</parent>
+<!-- 	<parent> -->
+<!-- 		<groupId>com.example</groupId> -->
+<!-- 		<artifactId>service-parent</artifactId> -->
+<!-- 		<version>10.0.1</version> -->
+<!-- 	</parent> -->
 	<groupId>com.example</groupId>
 	<artifactId>ticket-service</artifactId>
 	<version>10.0.1</version>
@@ -36,6 +36,11 @@
 			<artifactId>
 				spring-boot-starter-data-elasticsearch
 			</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>service-common</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
