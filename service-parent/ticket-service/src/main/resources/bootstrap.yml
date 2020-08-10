@@ -1,8 +1,0 @@
-spring:
-   application:
-      name: ticket-service
-   cloud:
-      config:
-         profile: native
-         url: http://localhost:8888
-            
