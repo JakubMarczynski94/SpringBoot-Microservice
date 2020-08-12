@@ -24,6 +24,7 @@
 		<module>eureka-server</module>
     <module>ticket.service-app</module>
     <module>common-service-app</module>
+    <module>notification-service-app</module>
   </modules>
 	<dependencies>
 
