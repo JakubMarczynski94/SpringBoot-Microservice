@@ -20,3 +20,13 @@ services:
          - 9300:9300
       environment:
          discovery.type: single-node
+
+
+   ms-rabbitmq:
+      image: rabbitmq:3-management
+      ports:
+         - '5672:5672'
+         - '15672:15672'
+      environment:
+         - RABBITMQ_DEFAULT_USER=celal
+         - RABBITMQ_DEFAULT_PASS=celal
