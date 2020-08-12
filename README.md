@@ -1,3 +1,3 @@
 # Microservice project Structure
 
-![Microservice project Structure](maven.png)
+![Microservice project Structure](project-architecture.png)
