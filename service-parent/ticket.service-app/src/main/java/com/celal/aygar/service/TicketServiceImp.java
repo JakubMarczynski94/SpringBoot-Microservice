@@ -31,7 +31,7 @@ public class TicketServiceImp implements TicketService {
     private final TicketRepository ticketRepository; 
     private final TicketElasticRepository ticketElasticRepository;
     private final ModelMapper mapper;
-    
+    private final TicketNotificationService notificationService;
     private final AccountServiceClient accountServiceClient; 
     
     
@@ -72,9 +72,9 @@ public class TicketServiceImp implements TicketService {
 
         // olusan nesneyi döndür
         ticketDto.setTicketid(ticket.getTicketid());;
-//
-//        // Kuyruga notification yaz
-//        ticketNotificationService.sendToQueue(ticket);
+
+        // Kuyruga notification yaz
+        notificationService.sendToQueue(ticket);
         return ticketDto;
     }
 
