@@ -25,7 +25,8 @@
     <module>ticket.service-app</module>
     <module>common-service-app</module>
     <module>notification-service-app</module>
-  </modules>
+    <module>zipkin-server</module>
+	</modules>
 	<dependencies>
 
 		<!-- <dependency> -->
